@@ -5,26 +5,32 @@
 //  Created by Gabriel Mors  on 09/06/23.
 //
 
+//
+//  HomeScreen.swift
+//  ChatGPT
+//
+//  Created by Gabriel Mors  on 09/06/23.
+//
+
 import UIKit
 
 protocol HomeScreenProtocol: AnyObject {
-    func tappedButton(text: String)
+    func tappedSendButton(text: String)
 }
 
 class HomeScreen: UIView {
     
-    private weak var delegate: HomeScreenProtocol?
-    
-    public func delegate(delegate: HomeScreenProtocol) {
-        self.delegate = delegate
-    }
+    weak var delegate: HomeScreenProtocol?
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
         tableView.backgroundColor = .backGround
+        tableView.register(OutgoingTextTableViewCell.self, forCellReuseIdentifier: OutgoingTextTableViewCell.identifier)
+        tableView.register(IncomingTextMessageTableViewCell.self, forCellReuseIdentifier: IncomingTextMessageTableViewCell.identifier)
+        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
         return tableView
     }()
     
@@ -50,8 +56,9 @@ class HomeScreen: UIView {
         textField.autocorrectionType = .no
         textField.spellCheckingType = .no
         textField.keyboardType = .default
-        textField.placeholder = "type here:"
         textField.borderStyle = .none
+        textField.placeholder = "Digite aqui:"
+        textField.delegate = self
         return textField
     }()
     
@@ -69,7 +76,7 @@ class HomeScreen: UIView {
     
     @objc private func tappedSendButton() {
         let text = messageTextField.text ?? ""
-        delegate?.tappedButton(text: text)
+        delegate?.tappedSendButton(text: text)
         messageTextField.text = ""
         sendButton.isEnabled = false
     }
@@ -79,11 +86,6 @@ class HomeScreen: UIView {
         backgroundColor = .backGround
         addSubViews()
         configConstraints()
-    }
-    
-    public func configTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
-        tableView.delegate = delegate
-        tableView.dataSource = dataSource
     }
     
     required init?(coder: NSCoder) {
@@ -98,9 +100,14 @@ class HomeScreen: UIView {
         contentView.addSubview(sendButton)
     }
     
+    public func configTableViewProtocols(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+    }
+    
     private func configConstraints() {
         NSLayoutConstraint.activate([
-        
+            
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -112,20 +119,34 @@ class HomeScreen: UIView {
             contentView.heightAnchor.constraint(equalToConstant: 70),
             
             subContentView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            subContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             subContentView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            subContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             subContentView.heightAnchor.constraint(equalToConstant: 50),
             
-            messageTextField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            messageTextField.centerYAnchor.constraint(equalTo: subContentView.centerYAnchor),
+            messageTextField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -5),
             messageTextField.leadingAnchor.constraint(equalTo: subContentView.leadingAnchor, constant: 10),
-            messageTextField.trailingAnchor.constraint(equalTo: sendButton.trailingAnchor, constant: -5),
             messageTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            sendButton.trailingAnchor.constraint(equalTo: subContentView.trailingAnchor, constant: -5),
-            sendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor),
-            sendButton.widthAnchor.constraint(equalToConstant: 45),
             sendButton.heightAnchor.constraint(equalToConstant: 45),
+            sendButton.widthAnchor.constraint(equalToConstant: 45),
+            sendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor, constant: -10),
+            sendButton.trailingAnchor.constraint(equalTo: subContentView.trailingAnchor, constant: -5),
+            
         ])
     }
+}
+
+extension HomeScreen: UITextFieldDelegate {
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text as NSString? else { return false }
+        let updateText = text.replacingCharacters(in: range, with: string)
+        if updateText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            sendButton.isEnabled = false
+        } else {
+            sendButton.isEnabled = true
+        }
+        return true
+    }
 }
