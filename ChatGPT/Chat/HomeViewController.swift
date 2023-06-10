@@ -16,6 +16,10 @@ class HomeViewController: UIViewController {
         view = screen
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        addLogoTofavigationBarItem(image: UIImage(named: "Logo_GM") ?? UIImage())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.configTableView(delegate: self, dataSource: self)
