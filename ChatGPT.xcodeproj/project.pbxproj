@@ -14,6 +14,7 @@
 		C419004F2A27C7B50076F072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C419004D2A27C7B50076F072 /* LaunchScreen.storyboard */; };
 		C477571A2A33E4F200A3880E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757192A33E4F200A3880E /* HomeScreen.swift */; };
 		C477571D2A33F24900A3880E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C477571C2A33F24900A3880E /* Colors.swift */; };
+		C47757202A340CD300A3880E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C477571F2A340CD300A3880E /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C41900502A27C7B50076F072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47757192A33E4F200A3880E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		C477571C2A33F24900A3880E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C477571F2A340CD300A3880E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		C41900412A27C7B20076F072 /* ChatGPT */ = {
 			isa = PBXGroup;
 			children = (
+				C477571E2A340CC400A3880E /* Model */,
 				C477571B2A33F23700A3880E /* Utils */,
 				C47757182A33E4D000A3880E /* Chat */,
 				C47757172A33E37A00A3880E /* Resources */,
@@ -92,6 +95,14 @@
 				C477571C2A33F24900A3880E /* Colors.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C477571E2A340CC400A3880E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C477571F2A340CD300A3880E /* Message.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 				C477571A2A33E4F200A3880E /* HomeScreen.swift in Sources */,
 				C477571D2A33F24900A3880E /* Colors.swift in Sources */,
 				C41900472A27C7B20076F072 /* HomeViewController.swift in Sources */,
+				C47757202A340CD300A3880E /* Message.swift in Sources */,
 				C41900432A27C7B20076F072 /* AppDelegate.swift in Sources */,
 				C41900452A27C7B20076F072 /* SceneDelegate.swift in Sources */,
 			);
