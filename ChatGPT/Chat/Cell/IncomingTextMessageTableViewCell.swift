@@ -12,7 +12,7 @@ enum Font: String {
 }
 
 class IncomingTextMessageTableViewCell: UITableViewCell {
-
+    
     static let identefier: String = String(describing: IncomingTextMessageTableViewCell.self)
     
     lazy var messageView: UIView = {
@@ -47,7 +47,7 @@ class IncomingTextMessageTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
@@ -60,6 +60,10 @@ class IncomingTextMessageTableViewCell: UITableViewCell {
             messageLabel.leadingAnchor.constraint(equalTo: messageView.leadingAnchor, constant: 15),
             messageLabel.bottomAnchor.constraint(equalTo: messageView.bottomAnchor, constant: -15),
         ])
+    }
+    
+    public func setupCell(message: String) {
+        messageLabel.text = message
     }
     
 }
