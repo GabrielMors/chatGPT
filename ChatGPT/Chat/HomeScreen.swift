@@ -79,4 +79,20 @@ class HomeScreen: UIView {
         contentView.addSubview(sendButton)
     }
     
+    private func configConstraints() {
+        NSLayoutConstraint.activate([
+        
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: contentView.topAnchor),
+            
+            contentView.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 70),
+            
+        ])
+    }
+    
 }
