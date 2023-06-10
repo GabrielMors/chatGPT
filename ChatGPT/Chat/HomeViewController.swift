@@ -2,13 +2,13 @@
 //  ViewController.swift
 //  ChatGPT
 //
-//  Created by Gabriel Mors  on 31/05/23.
+//  Created by Gabriel Mors  on 10/06/23.
 //
 
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     var screen: HomeScreen?
     var viewModel: HomeViewModel = HomeViewModel()
     
@@ -23,13 +23,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        screen?.delegate(delegate: self)
-        screen?.configTableView(delegate: self, dataSource: self)
+        viewModel.delegate(delegate: self)
+        screen?.delegate = self
+        screen?.configTableViewProtocols(delegate: self, dataSource: self)
     }
-
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection
     }
@@ -39,13 +41,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch model.typeMessage {
         case .user:
-            guard let cell = screen?.tableView.dequeueReusableCell(withIdentifier: OutgoingTextTableViewCell.identefier, for: indexPath) as? OutgoingTextTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OutgoingTextTableViewCell.identifier, for: indexPath) as? OutgoingTextTableViewCell else {
                 return UITableViewCell()
             }
             cell.setupCell(message: model.message)
             return cell
         case .chatGPT:
-            guard let cell = screen?.tableView.dequeueReusableCell(withIdentifier: IncomingTextMessageTableViewCell.identefier, for: indexPath) as? IncomingTextMessageTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: IncomingTextMessageTableViewCell.identifier, for: indexPath) as? IncomingTextMessageTableViewCell else {
                 return UITableViewCell()
             }
             cell.setupCell(message: model.message)
@@ -59,7 +61,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeScreenProtocol {
-    func tappedButton(text: String) {
-        
+    func tappedSendButton(text: String) {
+        viewModel.fetchMessage(message: text)
+        screen?.tableView.reloadData()
     }
 }
+
+extension HomeViewController: HomeViewModelProtocol {
+    func reloadData() {
+        screen?.tableView.reloadData()
+    }
+}
+

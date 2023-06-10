@@ -21,6 +21,7 @@
 		C477572B2A351E8800A3880E /* OutgoingTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C477572A2A351E8800A3880E /* OutgoingTextTableViewCell.swift */; };
 		C477572E2A35228C00A3880E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C477572D2A35228C00A3880E /* OpenAISwift */; };
 		C47757312A3522DE00A3880E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757302A3522DE00A3880E /* HomeViewModel.swift */; };
+		C47757342A352A9C00A3880E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757332A352A9C00A3880E /* HomeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C47757282A351BBD00A3880E /* IncomingTextMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingTextMessageTableViewCell.swift; sourceTree = "<group>"; };
 		C477572A2A351E8800A3880E /* OutgoingTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingTextTableViewCell.swift; sourceTree = "<group>"; };
 		C47757302A3522DE00A3880E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C47757332A352A9C00A3880E /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C477571E2A340CC400A3880E /* Model */,
+				C47757322A352A8000A3880E /* Service */,
 				C477571B2A33F23700A3880E /* Utils */,
 				C47757182A33E4D000A3880E /* Chat */,
 				C47757172A33E37A00A3880E /* Resources */,
@@ -152,6 +155,14 @@
 				C47757302A3522DE00A3880E /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C47757322A352A8000A3880E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C47757332A352A9C00A3880E /* HomeService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 				C477572B2A351E8800A3880E /* OutgoingTextTableViewCell.swift in Sources */,
 				C477571D2A33F24900A3880E /* UIColor+Extension.swift in Sources */,
 				C41900472A27C7B20076F072 /* HomeViewController.swift in Sources */,
+				C47757342A352A9C00A3880E /* HomeService.swift in Sources */,
 				C47757202A340CD300A3880E /* Message.swift in Sources */,
 				C47757222A3412C500A3880E /* UIViewController+Extension.swift in Sources */,
 				C41900432A27C7B20076F072 /* AppDelegate.swift in Sources */,

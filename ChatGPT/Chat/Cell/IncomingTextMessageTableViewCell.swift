@@ -2,18 +2,14 @@
 //  IncomingTextMessageTableViewCell.swift
 //  ChatGPT
 //
-//  Created by Gabriel Mors  on 10/06/23.
+//  Created by Gabriel Mors  on 31/05/23.
 //
 
 import UIKit
 
-enum Font: String {
-    case fontMessage = "HelveticaNeue-Medium"
-}
-
 class IncomingTextMessageTableViewCell: UITableViewCell {
-    
-    static let identefier: String = String(describing: IncomingTextMessageTableViewCell.self)
+
+    static let identifier: String = String(describing: IncomingTextMessageTableViewCell.self)
     
     lazy var messageView: UIView = {
         let view = UIView()
@@ -27,7 +23,7 @@ class IncomingTextMessageTableViewCell: UITableViewCell {
     lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: Font.fontMessage.rawValue, size: 16)
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
         label.numberOfLines = 0
         label.textColor = .white
         return label
@@ -35,6 +31,9 @@ class IncomingTextMessageTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        transform = CGAffineTransform(scaleX: 1, y: -1)
+        backgroundColor = .backGround
+        selectionStyle = .none
         addElements()
         configConstraints()
     }
