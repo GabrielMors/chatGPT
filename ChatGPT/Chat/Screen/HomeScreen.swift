@@ -130,7 +130,7 @@ class HomeScreen: UIView {
             
             sendButton.heightAnchor.constraint(equalToConstant: 45),
             sendButton.widthAnchor.constraint(equalToConstant: 45),
-            sendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor, constant: -10),
+            sendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor),
             sendButton.trailingAnchor.constraint(equalTo: subContentView.trailingAnchor, constant: -5),
             
         ])
