@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen?.delegate(delegate: self)
         screen?.configTableView(delegate: self, dataSource: self)
     }
 
@@ -30,15 +31,30 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let model = viewModel.loadCurrentMessage(indexPath: indexPath)
+        
+        switch model.typeMessage {
+        case .user:
+            guard let cell = screen?.tableView.dequeueReusableCell(withIdentifier: OutgoingTextTableViewCell.identefier, for: indexPath) as? OutgoingTextTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.setupCell(message: model.message)
+            return cell
+        case .chatGPT:
+            guard let cell = screen?.tableView.dequeueReusableCell(withIdentifier: IncomingTextMessageTableViewCell.identefier, for: indexPath) as? IncomingTextMessageTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.setupCell(message: model.message)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat()
+        return viewModel.heightForRowAt(indexPath: indexPath)
     }
 }
 
