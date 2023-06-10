@@ -60,4 +60,8 @@ class OutgoingTextTableViewCell: UITableViewCell {
         ])
     }
     
+    public func setupCell(message: String) {
+        messageLabel.text = message
+    }
+    
 }
