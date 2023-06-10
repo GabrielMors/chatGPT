@@ -65,6 +65,7 @@ class HomeScreen: UIView {
         super.init(frame: frame)
         backgroundColor = .backGround
         addSubViews()
+        configConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -92,6 +93,20 @@ class HomeScreen: UIView {
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentView.heightAnchor.constraint(equalToConstant: 70),
             
+            subContentView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            subContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            subContentView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            subContentView.heightAnchor.constraint(equalToConstant: 50),
+            
+            messageTextField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            messageTextField.leadingAnchor.constraint(equalTo: subContentView.leadingAnchor, constant: 10),
+            messageTextField.trailingAnchor.constraint(equalTo: sendButton.trailingAnchor, constant: -5),
+            messageTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            sendButton.trailingAnchor.constraint(equalTo: subContentView.trailingAnchor, constant: -5),
+            sendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor),
+            sendButton.widthAnchor.constraint(equalToConstant: 45),
+            sendButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
     
