@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol HomeScreenProtocol: AnyObject {
+    func tappedButton(text: String)
+}
+
 class HomeScreen: UIView {
+    
+    private weak var delegate: HomeScreenProtocol?
+    
+    public func delegate(delegate: HomeScreenProtocol) {
+        self.delegate = delegate
+    }
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -58,7 +68,10 @@ class HomeScreen: UIView {
     }()
     
     @objc private func tappedSendButton() {
-        
+        let text = messageTextField.text ?? ""
+        delegate?.tappedButton(text: text)
+        messageTextField.text = ""
+        sendButton.isEnabled = false
     }
     
     override init(frame: CGRect) {
@@ -66,6 +79,11 @@ class HomeScreen: UIView {
         backgroundColor = .backGround
         addSubViews()
         configConstraints()
+    }
+    
+    public func configTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
     }
     
     required init?(coder: NSCoder) {
