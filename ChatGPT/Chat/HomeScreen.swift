@@ -29,8 +29,26 @@ class HomeScreen: UIView {
     
     lazy var subContentView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 8
         
         return view
     }()
+    
+    lazy var messageTextField: UITextField = {
+       let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.autocorrectionType = .no
+        textField.spellCheckingType = .no
+        textField.keyboardType = .default
+        textField.placeholder = "type here:"
+        textField.borderStyle = .none
+        
+        return textField
+    }()
+    
+    
     
 }
