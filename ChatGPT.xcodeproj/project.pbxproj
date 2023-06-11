@@ -22,6 +22,7 @@
 		C477572E2A35228C00A3880E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C477572D2A35228C00A3880E /* OpenAISwift */; };
 		C47757312A3522DE00A3880E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757302A3522DE00A3880E /* HomeViewModel.swift */; };
 		C47757342A352A9C00A3880E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757332A352A9C00A3880E /* HomeService.swift */; };
+		C47757682A3644FE00A3880E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757672A3644FE00A3880E /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		C477572A2A351E8800A3880E /* OutgoingTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingTextTableViewCell.swift; sourceTree = "<group>"; };
 		C47757302A3522DE00A3880E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C47757332A352A9C00A3880E /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		C47757672A3644FE00A3880E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		C41900412A27C7B20076F072 /* ChatGPT */ = {
 			isa = PBXGroup;
 			children = (
+				C47757662A3644C600A3880E /* Secrets */,
 				C477571E2A340CC400A3880E /* Model */,
 				C47757322A352A8000A3880E /* Service */,
 				C477571B2A33F23700A3880E /* Utils */,
@@ -165,6 +168,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		C47757662A3644C600A3880E /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				C47757672A3644FE00A3880E /* APIKeys.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +254,7 @@
 			files = (
 				C47757252A351AD500A3880E /* String+Extension.swift in Sources */,
 				C47757312A3522DE00A3880E /* HomeViewModel.swift in Sources */,
+				C47757682A3644FE00A3880E /* APIKeys.swift in Sources */,
 				C477571A2A33E4F200A3880E /* HomeScreen.swift in Sources */,
 				C477572B2A351E8800A3880E /* OutgoingTextTableViewCell.swift in Sources */,
 				C477571D2A33F24900A3880E /* UIColor+Extension.swift in Sources */,

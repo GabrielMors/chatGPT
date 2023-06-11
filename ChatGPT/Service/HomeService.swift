@@ -11,7 +11,7 @@ import OpenAISwift
 class HomeService {
     
     func sendMessage(text: String, completion: @escaping (Result<String, OpenAIError>) -> Void) {
-        OpenAISwift(authToken: "").sendCompletion(with: text, model: .gpt3(.davinci), maxTokens: 4000) { result in
+        OpenAISwift(authToken: APIKeys.chatGPTKey).sendCompletion(with: text, model: .gpt3(.davinci), maxTokens: 4000) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
