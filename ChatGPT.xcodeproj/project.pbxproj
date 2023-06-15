@@ -25,6 +25,9 @@
 		C47757682A3644FE00A3880E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757672A3644FE00A3880E /* APIKeys.swift */; };
 		C4CD2CAB2A39450B00315575 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAA2A39450B00315575 /* SettingsViewController.swift */; };
 		C4CD2CAD2A39503000315575 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAC2A39503000315575 /* SettingsScreen.swift */; };
+		C4CD2CB02A3B1BBE00315575 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAF2A3B1BBE00315575 /* Person.swift */; };
+		C4CD2CB32A3B1C4500315575 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CB22A3B1C4500315575 /* SettingsViewModel.swift */; };
+		C4CD2CB52A3B1C7800315575 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CB42A3B1C7800315575 /* SettingsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		C47757672A3644FE00A3880E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C4CD2CAA2A39450B00315575 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C4CD2CAC2A39503000315575 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		C4CD2CAF2A3B1BBE00315575 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		C4CD2CB22A3B1C4500315575 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		C4CD2CB42A3B1C7800315575 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				C477571F2A340CD300A3880E /* Message.swift */,
+				C4CD2CAF2A3B1BBE00315575 /* Person.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C47757332A352A9C00A3880E /* HomeService.swift */,
+				C4CD2CB42A3B1C7800315575 /* SettingsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 		C4CD2CA92A3944E500315575 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C4CD2CB12A3B1C2E00315575 /* ViewModel */,
 				C4CD2CAE2A39503D00315575 /* Screen */,
 				C4CD2CAA2A39450B00315575 /* SettingsViewController.swift */,
 			);
@@ -196,6 +205,14 @@
 				C4CD2CAC2A39503000315575 /* SettingsScreen.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		C4CD2CB12A3B1C2E00315575 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C4CD2CB22A3B1C4500315575 /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CD2CB52A3B1C7800315575 /* SettingsService.swift in Sources */,
 				C47757252A351AD500A3880E /* String+Extension.swift in Sources */,
 				C47757312A3522DE00A3880E /* HomeViewModel.swift in Sources */,
 				C47757682A3644FE00A3880E /* APIKeys.swift in Sources */,
@@ -282,12 +300,14 @@
 				C477571D2A33F24900A3880E /* UIColor+Extension.swift in Sources */,
 				C41900472A27C7B20076F072 /* HomeViewController.swift in Sources */,
 				C47757342A352A9C00A3880E /* HomeService.swift in Sources */,
+				C4CD2CB32A3B1C4500315575 /* SettingsViewModel.swift in Sources */,
 				C47757202A340CD300A3880E /* Message.swift in Sources */,
 				C4CD2CAB2A39450B00315575 /* SettingsViewController.swift in Sources */,
 				C47757222A3412C500A3880E /* UIViewController+Extension.swift in Sources */,
 				C41900432A27C7B20076F072 /* AppDelegate.swift in Sources */,
 				C41900452A27C7B20076F072 /* SceneDelegate.swift in Sources */,
 				C4CD2CAD2A39503000315575 /* SettingsScreen.swift in Sources */,
+				C4CD2CB02A3B1BBE00315575 /* Person.swift in Sources */,
 				C47757292A351BBD00A3880E /* IncomingTextMessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
