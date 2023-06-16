@@ -23,6 +23,7 @@
 		C47757312A3522DE00A3880E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757302A3522DE00A3880E /* HomeViewModel.swift */; };
 		C47757342A352A9C00A3880E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757332A352A9C00A3880E /* HomeService.swift */; };
 		C47757682A3644FE00A3880E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757672A3644FE00A3880E /* APIKeys.swift */; };
+		C4AD89172A3CD24B00F876D7 /* person.json in Resources */ = {isa = PBXBuildFile; fileRef = C4AD89162A3CD24B00F876D7 /* person.json */; };
 		C4CD2CAB2A39450B00315575 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAA2A39450B00315575 /* SettingsViewController.swift */; };
 		C4CD2CAD2A39503000315575 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAC2A39503000315575 /* SettingsScreen.swift */; };
 		C4CD2CB02A3B1BBE00315575 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAF2A3B1BBE00315575 /* Person.swift */; };
@@ -48,6 +49,7 @@
 		C47757302A3522DE00A3880E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C47757332A352A9C00A3880E /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		C47757672A3644FE00A3880E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		C4AD89162A3CD24B00F876D7 /* person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = person.json; path = ../../../../TurmaBackFront350BF/ChatGPT350BF/ChatGPT350BF/person.json; sourceTree = "<group>"; };
 		C4CD2CAA2A39450B00315575 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C4CD2CAC2A39503000315575 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		C4CD2CAF2A3B1BBE00315575 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				C41900422A27C7B20076F072 /* AppDelegate.swift */,
 				C41900442A27C7B20076F072 /* SceneDelegate.swift */,
+				C4AD89162A3CD24B00F876D7 /* person.json */,
 				C419004B2A27C7B50076F072 /* Assets.xcassets */,
 				C419004D2A27C7B50076F072 /* LaunchScreen.storyboard */,
 			);
@@ -279,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AD89172A3CD24B00F876D7 /* person.json in Resources */,
 				C419004F2A27C7B50076F072 /* LaunchScreen.storyboard in Resources */,
 				C419004C2A27C7B50076F072 /* Assets.xcassets in Resources */,
 			);

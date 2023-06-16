@@ -43,4 +43,19 @@ class SettingsService {
             }
         }.resume()
     }
+    
+    func getPersonFromJson(completion: (Result<Person, ErrorProfile>) -> Void) {
+        if let url = Bundle.main.url(forResource: "person", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let person: Person = try JSONDecoder().decode(Person.self, from: data)
+                completion(.success(person))
+                print("SUCCESS -> \(#function)")
+            }catch {
+                completion(.failure(ErrorProfile.fileDecodingFailed(name: "data", error)))
+                print("ERROR -> \(#function)")
+            }
+        }
+    }
+    
 }

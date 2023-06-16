@@ -27,7 +27,7 @@ class SettingsViewModel {
     }
     
     public func featchPerson() {
-        service.getPerson { result in
+        service.getPersonFromJson { result in
             switch result {
             case .success(let success):
                 self.person = success

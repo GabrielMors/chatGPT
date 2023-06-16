@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
 }
 
 extension SettingsViewController: SettingsViewModelProtocol {
+
     func success() {
         self.screen.nameLabel.text = viewModel.getName
         self.screen.ageLabel.text = viewModel.getAge
@@ -33,6 +34,4 @@ extension SettingsViewController: SettingsViewModelProtocol {
     func error(error: ErrorProfile) {
         print(error)
     }
-    
-    
 }
