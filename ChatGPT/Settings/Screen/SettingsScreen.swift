@@ -14,7 +14,6 @@ class SettingsScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 24)
-        label.text = "Gabriel Mors"
         return label
     }()
     
@@ -23,7 +22,6 @@ class SettingsScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.text = "18 anos"
         return label
     }()
     
