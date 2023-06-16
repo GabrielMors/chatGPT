@@ -24,6 +24,7 @@
 		C47757342A352A9C00A3880E /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757332A352A9C00A3880E /* HomeService.swift */; };
 		C47757682A3644FE00A3880E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47757672A3644FE00A3880E /* APIKeys.swift */; };
 		C4AD89172A3CD24B00F876D7 /* person.json in Resources */ = {isa = PBXBuildFile; fileRef = C4AD89162A3CD24B00F876D7 /* person.json */; };
+		C4AD891A2A3CDA4C00F876D7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C4AD89192A3CDA4C00F876D7 /* Alamofire */; };
 		C4CD2CAB2A39450B00315575 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAA2A39450B00315575 /* SettingsViewController.swift */; };
 		C4CD2CAD2A39503000315575 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAC2A39503000315575 /* SettingsScreen.swift */; };
 		C4CD2CB02A3B1BBE00315575 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CD2CAF2A3B1BBE00315575 /* Person.swift */; };
@@ -63,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C477572E2A35228C00A3880E /* OpenAISwift in Frameworks */,
+				C4AD891A2A3CDA4C00F876D7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +238,7 @@
 			name = ChatGPT;
 			packageProductDependencies = (
 				C477572D2A35228C00A3880E /* OpenAISwift */,
+				C4AD89192A3CDA4C00F876D7 /* Alamofire */,
 			);
 			productName = ChatGPT;
 			productReference = C419003F2A27C7B20076F072 /* ChatGPT.app */;
@@ -267,6 +270,7 @@
 			mainGroup = C41900362A27C7B20076F072;
 			packageReferences = (
 				C477572C2A35228C00A3880E /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				C4AD89182A3CDA4C00F876D7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = C41900402A27C7B20076F072 /* Products */;
 			projectDirPath = "";
@@ -528,6 +532,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		C4AD89182A3CDA4C00F876D7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -535,6 +547,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C477572C2A35228C00A3880E /* XCRemoteSwiftPackageReference "OpenAISwift" */;
 			productName = OpenAISwift;
+		};
+		C4AD89192A3CDA4C00F876D7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4AD89182A3CDA4C00F876D7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

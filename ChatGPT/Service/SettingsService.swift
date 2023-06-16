@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Alamofire
 
 enum ErrorProfile: Swift.Error {
     case fileNotFound(name: String)
     case fileDecodingFailed(name: String, Swift.Error)
     case errorURLRequest(Swift.Error)
+    case errorRequest(AFError)
     case errorUrl(urlString: String)
     case errorDetail(detail: String)
 }
@@ -18,7 +20,7 @@ enum ErrorProfile: Swift.Error {
 class SettingsService {
     
     private let urlString: String = "https://run.mocky.io/v3/685426ae-3405-4690-91d5-52d8d788acab"
-    
+    //MARK: Nativa
     func getPerson(compleation: @escaping (Result<Person, ErrorProfile>)-> Void) {
         guard let url = URL(string: urlString) else {
             return compleation(.failure(ErrorProfile.errorUrl(urlString: urlString)))
@@ -42,6 +44,18 @@ class SettingsService {
                 }
             }
         }.resume()
+    }
+    
+    func getPersonAlamofire(completion: @escaping (Result<Person, ErrorProfile>) -> Void) {
+        AF.request(urlString, method: .get).validate(statusCode: 200...299).responseDecodable(of: Person.self) { response in
+            debugPrint(response)
+            switch response.result {
+            case .success(let success):
+                completion(.success(success))
+            case .failure(let error):
+                completion(.failure(ErrorProfile.errorRequest(error)))
+            }
+        }
     }
     
     func getPersonFromJson(completion: (Result<Person, ErrorProfile>) -> Void) {
